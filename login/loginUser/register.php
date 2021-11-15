@@ -4,10 +4,11 @@ if (isset($_SESSION['user']) != "") {
     header("Location: home.php"); // redirects to home.php
 }
 if (isset($_SESSION['adm']) != "") {
-    header("Location: dashboard.php"); // redirects to home.php
+    header("Location: dashBoard.php"); // redirects to dashBoard.php
 }
 require_once 'components/db_connect.php';
 require_once 'components/file_upload.php';
+require_once 'components/boot.php';
 $error = false;
 $fname = $lname = $email = $date_of_birth = $pass = $picture = '';
 $fnameError = $lnameError = $emailError = $dateError = $passError = $picError = '';
@@ -115,6 +116,7 @@ mysqli_close($connect);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login & Registration System</title>
 <?php require_once 'components/boot.php'?>
+<link rel="stylesheet" href="../challenge/style.css">
 </head>
 <body>
 <div class="container">

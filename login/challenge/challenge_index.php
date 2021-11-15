@@ -1,6 +1,15 @@
 <?php
+session_start();
 require_once 'challenge_connect.php';
 
+// it will never let you open index(login) page if session is set
+if (isset($_SESSION['user']) != "") {
+    header("Location: challenge_home.php");
+    exit;
+}
+if (isset($_SESSION['adm']) != "") {
+    header("Location: ../loginUser/dashBoard.php"); // redirects to dashBoard.php
+}
 
 ?>
 

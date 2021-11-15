@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once 'components/db_connect.php';
+require_once 'components/boot.php';
 
 // it will never let you open index(login) page if session is set
 if (isset($_SESSION['user']) != "") {
@@ -8,7 +9,7 @@ if (isset($_SESSION['user']) != "") {
     exit;
 }
 if (isset($_SESSION['adm']) != "") {
-    header("Location: dashboard.php"); // redirects to home.php
+    header("Location: dashBoard.php"); // redirects to home.php
 }
 
 $error = false;
@@ -51,10 +52,10 @@ if (isset($_POST['btn-login'])) {
         if ($count == 1 && $row['password'] == $password) {
             if($row['status'] == 'adm'){
             $_SESSION['adm'] = $row['id'];           
-            header( "Location: dashboard.php");}
+            header( "Location: dashBoard.php");}
             else{
                 $_SESSION['user'] = $row['id']; 
-               header( "Location: home.php");
+               header( "Location: ../challenge/challenge_home.php");
             }          
         } else {
             $errMSG = "Incorrect Credentials, Try again...";
@@ -72,6 +73,7 @@ mysqli_close($connect);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login & Registration System</title>
 <?php require_once 'components/boot.php'?>
+<link rel="stylesheet" href="../challenge/style.css">
 </head>
 <body>
     <div class="container">

@@ -11,7 +11,7 @@ if( !isset($_SESSION['adm']) && !isset($_SESSION['user']) ) {
 $backBtn = '';
 //if it is a user it will create a back button to home.php
 if(isset($_SESSION["user"])){
-    $backBtn = "home.php";    
+    $backBtn = "../challenge/challenge_home.php";    
 }
 //if it is a adm it will create a back button to dashboard.php
 if(isset($_SESSION["adm"])){
@@ -85,6 +85,7 @@ mysqli_close($connect);
             height: 70px !important;
         }
    </style>
+   <link rel="stylesheet" href="../challenge/style.css">
 </head>
 <body>
 <div class="container">

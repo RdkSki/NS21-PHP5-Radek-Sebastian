@@ -4,7 +4,7 @@ require_once 'components/db_connect.php';
 
 // if adm will redirect to dashboard
 if (isset($_SESSION['adm'])) {
-    header("Location: dashboard.php");
+    header("Location: dashBoard.php");
     exit;
 }
 // if session is not set this will redirect to login page

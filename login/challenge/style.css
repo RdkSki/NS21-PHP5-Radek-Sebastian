@@ -40,3 +40,10 @@ a:hover{
     color: chocolate;
     background-color: darkgreen;
 }
+form {
+    color: darksalmon;
+    background-color: darkslategrey;
+    justify-content: space-around;
+    font-size: large;
+}
+
