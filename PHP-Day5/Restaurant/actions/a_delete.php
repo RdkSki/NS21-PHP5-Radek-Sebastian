@@ -1,6 +1,18 @@
 <?php 
 require_once 'db_connect.php';
 
+session_start();
+
+if (isset($_SESSION['user']) != "") {
+    header("Location: ../home.php");
+    exit;
+ }
+ 
+ if (!isset($_SESSION['adm']) && !isset($_SESSION['user'])) {
+    header("Location: ../index.php");
+    exit;
+ }
+
 if ($_POST) {
     $id = $_POST['id'];
     $picture = $_POST['picture'];

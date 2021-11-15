@@ -2,6 +2,18 @@
 require_once 'db_connect.php';
 require_once 'file_upload.php';
 
+session_start();
+
+if (isset($_SESSION['user']) != "") {
+    header("Location: ../home.php");
+    exit;
+ }
+ 
+ if (!isset($_SESSION['adm']) && !isset($_SESSION['user'])) {
+    header("Location: ../index.php");
+    exit;
+ }
+
 if ($_POST) {   
     $name = $_POST['name'];
     $description = $_POST['description'];

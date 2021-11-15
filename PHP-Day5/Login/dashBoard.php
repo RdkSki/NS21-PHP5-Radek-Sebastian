@@ -17,19 +17,22 @@ $status = 'adm';
 $sqlUser = "SELECT * FROM user WHERE status != '$status'";
 $resultUser = mysqli_query($connect, $sqlUser);
 
+$res = mysqli_query($connect, "SELECT * FROM user WHERE id=" . $_SESSION['adm']);
+$rowAdm = mysqli_fetch_array($res, MYSQLI_ASSOC);
+
 //this variable will hold the body for the table
 $tbody = ''; 
 $tbody2 = '';
 
 if ($resultUser->num_rows > 0) {
-    while ($row = $resultUser->fetch_array(MYSQLI_ASSOC)) {
+    while ($rowUser = $resultUser->fetch_array(MYSQLI_ASSOC)) {
         $tbody .= "<tr>
-        <td><img class='img-thumbnail rounded-circle' src='pictures/" . $row['picture'] . "' alt=" . $row['first_name'] . "></td>
-        <td>" . $row['first_name'] . " " . $row['last_name'] . "</td>
-        <td>" . $row['date_of_birth'] . "</td>
-        <td>" . $row['email'] . "</td>
-        <td><a href='update.php?id=" . $row['id'] . "'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
-        <a href='delete.php?id=" . $row['id'] . "'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
+        <td><img class='img-thumbnail rounded-circle' src='pictures/" . $rowUser['picture'] . "' alt=" . $rowUser['first_name'] . "></td>
+        <td>" . $rowUser['first_name'] . " " . $rowUser['last_name'] . "</td>
+        <td>" . $rowUser['date_of_birth'] . "</td>
+        <td>" . $rowUser['email'] . "</td>
+        <td><a href='update.php?id=" . $rowUser['id'] . "'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
+        <a href='delete.php?id=" . $rowUser['id'] . "'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
      </tr>";
     }
 } else {
@@ -40,14 +43,14 @@ $sqlProd = "SELECT * FROM products";
 $resultProd = mysqli_query($connect ,$sqlProd);
 
 if(mysqli_num_rows($resultProd)  > 0) {     
-    while($row = mysqli_fetch_array($resultProd, MYSQLI_ASSOC)){         
+    while($rowProd = mysqli_fetch_array($resultProd, MYSQLI_ASSOC)){         
         $tbody2 .= "<tr>
-            <td><img class='img-thumbnail' src='../Restaurant/pictures/" .$row['picture']."'</td>
-            <td>" .$row['name']."</td>
-            <td>" .$row['description']."</td>
-            <td>" .$row['price']."</td>
-            <td><a href='../restaurant/update.php?id=" .$row['id']."'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
-            <a href='../restaurant/delete.php?id=" .$row['id']."'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
+            <td><img class='img-thumbnail' src='../Restaurant/pictures/" .$rowProd['picture']."'</td>
+            <td>" .$rowProd['name']."</td>
+            <td>" .$rowProd['description']."</td>
+            <td>" .$rowProd['price']."</td>
+            <td><a href='../restaurant/update.php?id=" .$rowProd['id']."'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
+            <a href='../restaurant/delete.php?id=" .$rowProd['id']."'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
             </tr>";
     };
 } else {
@@ -101,8 +104,8 @@ height: auto;
 <body>
 <div class="container">
 <img class="userImage" src="pictures/admavatar.png" alt="Adm avatar">
-        <p class="">Administrator</p>
-        <a href="logout.php?logout">Sign Out</a>
+        <p class="">Administrator | <?php echo $rowAdm['first_name']; ?> </p>
+        <a href="logout.php?logout"><button class='btn btn-dark'type="button">Sign-out</button></a>
 <div class="row">
       
         <div class="col-12 mt-2">
@@ -125,6 +128,7 @@ height: auto;
     <div class="manageProduct mt-3">    
             <div class='mb-3'>
             <p class='h2'>Products</p>
+            
                 <a href= "../Restaurant/create.php"><button class='btn btn-primary'type="button" >Add product</button></a>
             </div>
             

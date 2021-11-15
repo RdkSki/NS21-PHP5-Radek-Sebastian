@@ -1,6 +1,23 @@
 <?php 
 require_once 'actions/db_connect.php';
 
+session_start();
+
+if (!isset($_SESSION['adm']) && !isset($_SESSION['user'])) {
+    header("Location: ../index.php");
+    exit;
+
+}
+require_once '../components/db_connect.php';
+if (isset($_SESSION['user']) != "") {
+   header("Location: ../home.php");
+   exit;
+}
+
+
+
+
+
 if ($_GET['id']) {
     $id = $_GET['id'];
     $sql = "SELECT * FROM products WHERE id = {$id}" ;
