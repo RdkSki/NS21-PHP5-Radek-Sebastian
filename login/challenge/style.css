@@ -1,0 +1,42 @@
+body{
+    color: darksalmon;
+    background-color: darkslategrey;
+    justify-content: space-around;
+    font-size: large;
+}
+#div{
+    padding-left: 19em;
+    padding-top: 2em;
+    justify-content: center;
+    text-decoration: none;
+ 
+}
+#fff{
+    align-self: center;
+    text-decoration: none;   
+    color: floralwhite;
+} 
+#cards{
+    padding-left: 19em;
+}
+form{
+    margin-top: 3em;
+    justify-content: center;
+    text-align: center;
+}
+h5{
+    color: floralwhite;
+    text-align: center;
+    padding-top: 2em;
+}
+.del{
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+    color: floralwhite;
+}
+a:hover{
+    color: chocolate;
+    background-color: darkgreen;
+}
