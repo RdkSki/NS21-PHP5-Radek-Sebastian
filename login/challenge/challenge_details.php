@@ -19,7 +19,7 @@
     <?php
       foreach ($rows as $value) {
         echo "<div id='cards' class='fs-3'><p><img class='rounded' src='{$value['image']}' width='200'><br>" . $value['dishName'] . "<br>" . $value['dishPrice'] . " €<br> " . $value['dishscription'] . "
-            <br><a class='del' href='challenge_delete.php?id={$value['dishID']}'>delete</a></p></div><hr>";
+            <br><a class='del' href='challenge_edit.php?id={$value['dishID']}'>edit</a><br><a class='del' href='challenge_delete.php?id={$value['dishID']}'>delete</a></p></div><hr>";
     }
     
     
