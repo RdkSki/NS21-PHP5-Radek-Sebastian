@@ -20,7 +20,7 @@ $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 <body>
         <h2 class="text-center pt-5 text-warning">Ristorante Portofino</h2>
-    <div id="div" class="fs-3"><!--<a href="challenge_create.php" id="fff">Create new record</a><br>--><a class="a" href="/login/register.php">Sign up</a><span>   </span><a href="index.php">Log in</a></div><br><br>
+    <div id="div" class="fs-3"><!--<a href="challenge_create.php" id="fff">Create new record</a><br>--><a class="a" href="../loginUser/register.php">Sign up</a><span>   </span><a href="../loginUser/index.php">Log in</a></div><br><br>
     <?php
     foreach ($rows as $value) {
         echo "<div id='cards' class='fs-3'><p><img class='rounded' src='{$value['image']}' width='200'><br>" . $value['dishName'] . "<br>" . $value['dishPrice'] . " €<br> " . $value['dishscription'] . "
