@@ -27,7 +27,7 @@ if (isset($_SESSION['adm']) != "") {
 
 <body>
         <h2 class="text-center pt-5 text-warning">Ristorante Portofino</h2>
-    <div id="div" class="fs-3"><!--<a href="challenge_create.php" id="fff">Create new record</a><br>--><a class="a" href="../loginUser/register.php">Sign up</a><span>   </span><a href="../loginUser/index.php">Log in</a></div><br><br>
+    <div id="div" class="fs-3"><a class="a" href="../loginUser/register.php">Sign up</a><span>   </span><a href="../loginUser/index.php">Log in</a></div><br><br>
     <footer class='text-center bg-dark text-light pt-2 fs-3 mt-2'>Radek Slowinski - 2021</footer>
 </body>
 

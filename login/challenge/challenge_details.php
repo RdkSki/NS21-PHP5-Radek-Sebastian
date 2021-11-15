@@ -1,9 +1,9 @@
 <?php
     require_once 'challenge_connect.php';
-    $sql = "SELECT * FROM dishes JOIN details ON fk_dishID = dishID";
+    $sql = "SELECT * FROM dishes";
     $result = mysqli_query($connect, $sql);
     $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    echo $rows;
+   
     
     
     ?>
@@ -18,7 +18,7 @@
 <body>
     <?php
       foreach ($rows as $value) {
-        echo "<div id='cards' class='fs-3'><p><img class='rounded' src='{$value['image']}' width='200'><br>" . $value['dishName'] . "<br>" . $value['dishPrice'] . " €<br> " . $value['description'] . "
+        echo "<div id='cards' class='fs-3'><p><img class='rounded' src='{$value['image']}' width='200'><br>" . $value['dishName'] . "<br>" . $value['dishPrice'] . " €<br> " . $value['dishscription'] . "
             <br><a class='del' href='challenge_delete.php?id={$value['dishID']}'>delete</a></p></div><hr>";
     }
     

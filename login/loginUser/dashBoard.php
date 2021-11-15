@@ -63,7 +63,11 @@ mysqli_close($connect);
 width: 100px;
 height: auto;
 }
+#fff:hover{
+color: yellow;
+}
     </style>
+    <link rel="stylesheet" href="../challenge/style.css">
 </head>
 <body>
 <div class="container">
@@ -92,5 +96,6 @@ height: auto;
         </div>
     </div>
 </div>
-</body>
+<p class="text-center fs-4"><a class="text-center" href="../challenge/challenge_create.php" id="fff">Create new record</a></p><br>
+<p class="text-center fs-4"><a class="text-center" href="../challenge/challenge_details.php" id="fff">Delete records</a></p></body>
 </html>

@@ -50,7 +50,7 @@ padding-left: 2em;
     <?php
     foreach ($rows as $value) {
         echo "<div id='cards' class='fs-3'><p><img class='rounded' src='{$value['image']}' width='200'><br>" . $value['dishName'] . "<br>" . $value['dishPrice'] . " €<br> " . $value['dishscription'] . "
-            <br></p><!--<a class='del' href='challenge_delete.php?id={$value['dishID']}'>delete</a>--></div><hr>";
+            <br></p></div><hr>";
     }
     // <a class='del' href='challenge_details.php?id='{$value['dishID']}'>details</a>
     ?>

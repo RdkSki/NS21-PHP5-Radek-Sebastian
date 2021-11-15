@@ -52,6 +52,7 @@ mysqli_close($connect);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete User</title>
     <?php require_once 'components/boot.php'?>
+    <link rel="stylesheet" href="../challenge/style.css">
     <style type= "text/css">
        fieldset {
             margin: auto;
