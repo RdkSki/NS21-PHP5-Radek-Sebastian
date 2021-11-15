@@ -1,9 +1,7 @@
 <?php
 require_once 'challenge_connect.php';
-$sql = "SELECT * FROM dishes";
-//$sql2 = "SELECT description FROM details";
-$result = mysqli_query($connect, $sql);
-$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -21,13 +19,7 @@ $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
 <body>
         <h2 class="text-center pt-5 text-warning">Ristorante Portofino</h2>
     <div id="div" class="fs-3"><!--<a href="challenge_create.php" id="fff">Create new record</a><br>--><a class="a" href="../loginUser/register.php">Sign up</a><span>   </span><a href="../loginUser/index.php">Log in</a></div><br><br>
-    <?php
-    foreach ($rows as $value) {
-        echo "<div id='cards' class='fs-3'><p><img class='rounded' src='{$value['image']}' width='200'><br>" . $value['dishName'] . "<br>" . $value['dishPrice'] . " €<br> " . $value['dishscription'] . "
-            <br></p><!--<a class='del' href='challenge_delete.php?id={$value['dishID']}'>delete</a>--></div><hr>";
-    }
-    // <a class='del' href='challenge_details.php?id='{$value['dishID']}'>details</a>
-    ?>
+    <footer class='text-center bg-dark text-light pt-2 fs-3 mt-2'>Radek Slowinski - 2021</footer>
 </body>
 
 </html>

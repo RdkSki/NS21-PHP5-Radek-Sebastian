@@ -31,5 +31,6 @@
            <input type="text" name="dishScription" placeholder="dish description"><br><br>
            <input type="submit" name="submit" value="submit"><br>
        </form>
+       <footer class='text-center bg-dark text-light pt-2 fs-3 mt-2'>Radek Slowinski - 2021</footer>
    </body>
 </html>

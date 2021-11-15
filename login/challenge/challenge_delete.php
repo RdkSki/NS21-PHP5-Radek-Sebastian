@@ -22,5 +22,6 @@ if(isset($_GET["id"])){
    }
 }
     ?>
+      <footer class='text-center bg-dark text-light pt-2 fs-3 mt-2'>Radek Slowinski - 2021</footer>
 </body>
 </html>
